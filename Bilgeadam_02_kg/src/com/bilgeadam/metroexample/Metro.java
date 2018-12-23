@@ -3,6 +3,7 @@ package com.bilgeadam.metroexample;
 import java.util.Scanner;
 
 public class Metro {
+	// test test
 
 	static double bakiye = 0;
 	static Scanner input = new Scanner(System.in);

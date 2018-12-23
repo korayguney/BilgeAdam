@@ -16,7 +16,7 @@ public class WhileExample {
 		do {
 			System.out.println("In the do while");
 			System.out.println(a + " value is smaller then 10");
-		} while (a < 10);
+		} while (a > 10);
 
 		
 		

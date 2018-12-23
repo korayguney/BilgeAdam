@@ -7,7 +7,7 @@ public class TernaryOperators {
 		// (condition) ? (state1) : (state2);
 
 		String name = "Andy";
-		String password = "1234";
+		String password = "134";
 
 		String result = (password == "134") ? ("Welcome " + name) : ("Your password is wrong");
 

@@ -12,12 +12,14 @@ public class SwitchExample {
 				break;
 			case "Koray":
 				System.out.println("Welcome " + name);
+				System.out.println("test");
 				break;
 			case "Mehmet":
 				System.out.println("Welcome " + name);
 				break;
 			default:
 				System.out.println("Welcome nobody");
+				break;
 		}
 		
 		System.out.println("*****************************");
