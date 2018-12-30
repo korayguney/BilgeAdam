@@ -1,6 +1,5 @@
 package com.bilgeadam.argumentlists;
 
-import com.sun.org.glassfish.external.statistics.AverageRangeStatistic;
 
 public class ArgumentListExample {
 

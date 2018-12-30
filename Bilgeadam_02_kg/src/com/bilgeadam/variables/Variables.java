@@ -2,14 +2,14 @@ package com.bilgeadam.variables;
 
 public class Variables {
 
-	// Class (Global, Instance) variables
+	// Global, Instance variables
 	int a = 10;
 	String x = "test";
 	char c = 'G';
 	boolean t = false;
 	private int z;
 	
-	// static variables
+	// static(Class) variables
 	static boolean test;
 	
 	public void maintest() {

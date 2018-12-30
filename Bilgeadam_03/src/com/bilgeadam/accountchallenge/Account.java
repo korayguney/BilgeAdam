@@ -34,17 +34,12 @@ public class Account {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
 	// methods
 	
 	public void depositFunds(double funds) {
 		this.balance += funds;
-		System.out.println(this.customerName + " deposits balance to the account of " + this.accountNumber + " and new balance is " + this.balance);
+		JOptionPane.showMessageDialog(jframe, this.customerName + " deposits balance to the account of " + this.accountNumber + " and new balance is " + this.balance);
+		//System.out.println(this.customerName + " deposits balance to the account of " + this.accountNumber + " and new balance is " + this.balance);
 	}
 	
 	public void depositFunds(double funds, String phoneNumber) {
