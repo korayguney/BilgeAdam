@@ -8,6 +8,9 @@ public class FinalTest {
 		this.a = 10;
 	}
 	
+	public FinalTest(int test) {
+		this.a = 10;
+	}
 	
 	public void changeFinalVar() {
 		//this.a = 100;

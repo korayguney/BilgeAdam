@@ -9,7 +9,4 @@ public class CarTest extends StaticTest {
 		Car car4 = new Car();
 	}
 	
-	
-	
-	
 }
