@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 public class Ferrari extends Car {
 
 	private String chassis_no;
+	private String color;
 	
 	public Ferrari() {
 		super(2017);
@@ -74,8 +75,27 @@ public class Ferrari extends Car {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((chassis_no == null) ? 0 : chassis_no.hashCode());
+		result = prime * result + ((color == null) ? 0 : color.hashCode());
 		return result;
 	}
+
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Ferrari other = (Ferrari) obj;
+//		if (chassis_no == null) {
+//			if (other.chassis_no != null)
+//				return false;
+//		} else if (!chassis_no.equals(other.chassis_no))
+//			return false;
+//		return true;
+//	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -91,7 +111,16 @@ public class Ferrari extends Car {
 				return false;
 		} else if (!chassis_no.equals(other.chassis_no))
 			return false;
+		
 		return true;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	public void setColor(String color) {
+		this.color = color;
 	}
 	
 	
