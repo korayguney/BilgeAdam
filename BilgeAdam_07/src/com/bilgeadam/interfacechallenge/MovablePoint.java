@@ -1,4 +1,4 @@
-package com.bilgedam.interfacechallenge;
+package com.bilgeadam.interfacechallenge;
 
 public class MovablePoint implements Movable{
 
