@@ -26,11 +26,11 @@ public class TestAnimal {
 		Cat cat = new Cat();
 		animal = cat;
 		
-		if (animal instanceof Dog)
-			Dog dog2 = (Dog) animal;
-		else
-
-			animal.makeSound();
+//		if (animal instanceof Dog)
+//			Dog dog2 = (Dog) animal;
+//		else
+//
+//			animal.makeSound();
 
 //		Dog dog2 = (Dog) animal;
 //		dog2.makeSound();
