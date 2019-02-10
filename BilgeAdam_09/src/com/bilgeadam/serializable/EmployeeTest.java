@@ -25,6 +25,7 @@ public class EmployeeTest {
 		System.out.println(emp.getName());
 		System.out.println(emp.getLastname());
 		System.out.println(emp.getAge());
+		System.out.println(emp.toString());
 		System.out.println("The employee is deserialized");
 		
 	}

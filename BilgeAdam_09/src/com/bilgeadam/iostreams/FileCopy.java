@@ -12,8 +12,8 @@ public class FileCopy {
 
 	public static void main(String[] args) {
 
-		String inputFile = "C:/Users/kgb20/OneDrive/Resimler/75178.jpg";
-		String outputFile = "C:/Users/kgb20/OneDrive/Resimler/75178-copy.jpg";
+		String inputFile = args[0]; //"C:/Users/kgb20/OneDrive/Resimler/75178.jpg";
+		String outputFile = args[1]; // "C:/Users/kgb20/OneDrive/Resimler/75178-copy.jpg";
 
 		File file = new File(inputFile);
 		System.out.println("File has the lenght of " + file.length() + " bytes");
