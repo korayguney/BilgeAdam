@@ -15,7 +15,7 @@ public class LinkedListArrayListBenchMark {
 
 		testAddTime(linkedList);
 		testGetTime(linkedList);
-		testRemoveTime(linkedList);
+		testRemoveTime(arrayList);
 	}
 
 	private static void testRemoveTime(List<Integer> arrayList) {
