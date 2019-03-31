@@ -1,4 +1,4 @@
-package com.bilgeadam.UI;
+package com.bilgeadam.view;
 
 import java.awt.EventQueue;
 
@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.BoxLayout;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 
@@ -96,9 +98,27 @@ public class LoginView {
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\kgb20\\Desktop\\bilgeadamlogo.jpg"));
 		lblNewLabel.setBounds(241, 13, 312, 177);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btnSignUp = new JButton("Sign up");
+		btnSignUp.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				new SignupView().main(null);
+			}
+		});
+		btnSignUp.setFont(new Font("Tahoma", Font.BOLD, 24));
+		btnSignUp.setBounds(441, 372, 141, 37);
+		frame.getContentPane().add(btnSignUp);
 	}
 
 	protected void checkUser(String username, String password) {
 		boolean result = new LoginService().validateUser(username,password);
+		System.out.println(result);
+		if(result) {
+			JOptionPane.showMessageDialog(null, "Welcome " + username);
+		} else {
+			JOptionPane.showMessageDialog(null, "Please check your login credentials " + username);
+		}
+		
 	}
 }

@@ -1,4 +1,4 @@
-package com.bilgeadam.UI;
+package com.bilgeadam.view;
 
 import java.awt.EventQueue;
 
@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.BoxLayout;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 
@@ -17,7 +19,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class LoginView {
+public class SignupView {
 
 	private JFrame frame;
 	private JTextField txt_username;
@@ -32,7 +34,7 @@ public class LoginView {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginView window = new LoginView();
+					SignupView window = new SignupView();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,7 +46,7 @@ public class LoginView {
 	/**
 	 * Create the application.
 	 */
-	public LoginView() {
+	public SignupView() {
 		initialize();
 	}
 
@@ -77,28 +79,34 @@ public class LoginView {
 		txt_password.setBounds(313, 275, 229, 51);
 		frame.getContentPane().add(txt_password);
 		
-		JButton btnLogin = new JButton("Login");
-		btnLogin.addMouseListener(new MouseAdapter() {
+		JButton btnSave = new JButton("Save");
+		btnSave.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
 				user.setUsername(txt_username.getText());
 				user.setPassword(txt_password.getText());
-				
-				checkUser(user.getUsername(), user.getPassword());
+				saveUser(user.getUsername(), user.getPassword());
 			}
 		});
-		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 24));
-		btnLogin.setBounds(313, 372, 116, 37);
-		frame.getContentPane().add(btnLogin);
+		btnSave.setFont(new Font("Tahoma", Font.BOLD, 24));
+		btnSave.setBounds(313, 372, 116, 37);
+		frame.getContentPane().add(btnSave);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\kgb20\\Desktop\\bilgeadamlogo.jpg"));
-		lblNewLabel.setBounds(241, 13, 312, 177);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel lblSignUpScreen = new JLabel("Sign Up Screen");
+		lblSignUpScreen.setFont(new Font("Tahoma", Font.BOLD, 36));
+		lblSignUpScreen.setBounds(224, 41, 299, 93);
+		frame.getContentPane().add(lblSignUpScreen);
 	}
 
-	protected void checkUser(String username, String password) {
-		boolean result = new LoginService().validateUser(username,password);
+	protected void saveUser(String username, String password) {
+		boolean result = new LoginService().saveUser(username,password);
+		System.out.println(result);
+		if(result) {
+			JOptionPane.showMessageDialog(null, username +" is saved");
+		} else {
+			JOptionPane.showMessageDialog(null, "Please check your sign up credentials " + username);
+		}
+		
 	}
 }

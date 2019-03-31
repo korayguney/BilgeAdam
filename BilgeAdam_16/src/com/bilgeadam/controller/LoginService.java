@@ -1,5 +1,7 @@
 package com.bilgeadam.controller;
 
+import com.bilgeadam.DAO.UserDAO;
+
 public class LoginService {
 
 	public boolean validateUser(String username, String password) {
