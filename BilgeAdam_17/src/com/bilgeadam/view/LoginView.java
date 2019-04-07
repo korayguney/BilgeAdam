@@ -115,9 +115,12 @@ public class LoginView {
 		boolean result = new LoginService().validateUser(username,password);
 		System.out.println(result);
 		if(result) {
+			frame.dispose();
 			JOptionPane.showMessageDialog(null, "Welcome " + username);
 		} else {
+			frame.dispose();
 			JOptionPane.showMessageDialog(null, "Please check your login credentials " + username);
+			frame.setVisible(true);
 		}
 		
 	}

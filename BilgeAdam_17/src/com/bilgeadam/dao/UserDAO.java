@@ -1,5 +1,6 @@
 package com.bilgeadam.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,16 +16,20 @@ public class UserDAO {
 		try {
 			conn = DBUtils.getConnection();
 			
-			String query = "SELECT * FROM users WHERE username = ? AND password = ?";
-			PreparedStatement psmt = conn.prepareStatement(query);
-			psmt.setString(1, username);
-			psmt.setString(2, password);
+//			String query = "SELECT * FROM users WHERE username = ? AND password = ?";
+//			PreparedStatement psmt = conn.prepareStatement(query);
+//			psmt.setString(1, username);
+//			psmt.setString(2, password);
+			
+			CallableStatement csmt = conn.prepareCall("{CALL login_checker(?,?)}");
+			csmt.setString(1, username);
+			csmt.setString(2, password);
 			
 //			ResultSetMetaData rsmt = psmt.getMetaData();
 //			System.out.println("Returned column : " + rsmt.getColumnCount());
 //			System.out.println("Result : " + psmt.execute());
 			
-			ResultSet rs = psmt.executeQuery();
+			ResultSet rs = csmt.executeQuery();
 			
 			while(rs.next()) {
 				return true;
