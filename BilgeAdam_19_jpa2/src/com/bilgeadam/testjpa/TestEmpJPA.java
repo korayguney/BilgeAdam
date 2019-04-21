@@ -35,7 +35,6 @@ public class TestEmpJPA {
 		emp3.getProjects().add(project1);
 		emp5.getProjects().add(project2);
 		
-
 		em.persist(project1);
 		em.persist(project2);
 		

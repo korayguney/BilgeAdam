@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student>
+		<name>Ali Veli</name>
+		<number>1234</number>
+		<courses>
+			<course>
+				<code>IT535</code>
+				<name>Introduction to Computer Sciences</name>
+				<gpa>3.10</gpa>
+			</course>
+			<course>
+				<code>IT537</code>
+				<name>Introduction to DBMS</name>
+				<gpa>2.80</gpa>
+			</course>
+			<course>
+				<code>IT540</code>
+				<name>Java Programming</name>
+				<gpa>3.10</gpa>
+			</course>
+		</courses>
+	</student>
+	<student>
+		<name>Hasan Türk</name>
+		<number>1235</number>
+		<courses>
+			<course>
+				<code>IT535</code>
+				<code>IT534</code>
+				<name>Introduction to Computer Sciences</name>
+				<gpa>3.10</gpa>
+			</course>
+			<course>
+				<code>IT537</code>
+				<name>Introduction to DBMS</name>
+				<gpa>2.80</gpa>
+			</course>
+			<course>
+				<code>IT540</code>
+				<name>Java Programming</name>
+				<gpa>3.10</gpa>
+			</course>
+		</courses>
+	</student>
+</students>
