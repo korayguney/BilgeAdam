@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Context and Initialization Servlet Parameters</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h2>Please fill the form below:</h2>
+       	<fieldset style="width: 200px">
+       	<legend>My Form</legend>
+        <form action="${pageContext.request.contextPath}/userServlet" method="post">
+            <label for="name"><strong>Name:</strong></label>
+            <input type="text" name="name" id="name">
+            <br>
+            <label for="email"><strong>Email:</strong></label>
+            <input type="text" name="email" id="email">
+            <input type="submit" value="Send">
+        </form>
+        </fieldset>
+    </body>
+</html>
