@@ -10,6 +10,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import com.bilgeadam.utils.DBUtils;
+import com.bilgeadam.utils.HashAlgorithm;
 
 @WebListener
 public class TestDataListener implements ServletContextListener {
@@ -33,11 +34,11 @@ public class TestDataListener implements ServletContextListener {
 			int result = rs.getInt("usercount");
 			
 			if(result == 0) {
-				stmt.execute("insert into users(username,password) values ('koray1' , '1234')");
-				stmt.execute("insert into users(username,password) values ('koray2' , '1234')");
-				stmt.execute("insert into users(username,password) values ('koray3' , '1234')");
-				stmt.execute("insert into users(username,password) values ('koray4' , '1234')");
-				stmt.execute("insert into users(username,password) values ('koray5' , '1234')");
+				stmt.execute("insert into users(username,password) values ('koray1' , '" + DBUtils.hashPassword("1234", HashAlgorithm.MD5) + "')");
+				stmt.execute("insert into users(username,password) values ('koray2' , '" + DBUtils.hashPassword("12345", HashAlgorithm.MD5) + "')");
+				stmt.execute("insert into users(username,password) values ('koray3' , '" + DBUtils.hashPassword("123456", HashAlgorithm.MD5) + "')");
+				stmt.execute("insert into users(username,password) values ('koray4' , '" + DBUtils.hashPassword("1234567", HashAlgorithm.MD5) + "')");
+				stmt.execute("insert into users(username,password) values ('koray5' , '" + DBUtils.hashPassword("1234", HashAlgorithm.MD5) + "')");
 			}
 			
 		} catch (SQLException e) {
