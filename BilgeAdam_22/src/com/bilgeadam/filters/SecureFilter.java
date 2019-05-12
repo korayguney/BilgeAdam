@@ -27,7 +27,7 @@ public class SecureFilter implements Filter {
 			throws IOException, ServletException {
 		System.out.println(" doFilter is called");
 		
-		if (((HttpServletRequest) request).getSession(false) == null) {
+		if (((HttpServletRequest) request).getSession().getAttribute("username") == null) {
 			((HttpServletResponse) response).sendRedirect("../index.html");
 		} 
 
