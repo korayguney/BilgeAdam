@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Calculator JSF Example</title>
+</h:head>
+<body>
+	<h1>JSF Calculator</h1>
+	<br />
+	<h:form>
+		<table>
+			<tr>
+				<td>First Digit :</td>
+				<td><h:inputText value="#{calculatorBean.firstdigit}" required="true" requiredMessage="You have to enter first digit" id="msg1"/></td>
+			</tr>
+			<tr>
+				<td>Second Digit :</td>
+				<td><h:inputText value="#{calculatorBean.seconddigit}" required="true" requiredMessage="You have to enter second digit" id="msg2"/></td>
+			</tr>
+			<h:panelGrid columns="4" cellpadding="5">
+				<h:commandButton action="#{calculatorBean.add()}" value="Add" />
+				<h:commandButton action="#{calculatorBean.substract()}" value="Substract" />
+				<h:commandButton action="#{calculatorBean.multiply()}" value="Multiply" />
+				<h:commandButton action="#{calculatorBean.divide()}" value="Divide" />
+			</h:panelGrid>
+		</table>
+	</h:form>
+	<h:outputText value="Result :  #{calculatorBean.result}" />
+	<br />
+	<h:message for="msg1"/>
+	<h:message for="msg2"/>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+
+	<h1 align="center">
+		Student Information System <br /> Login Page
+	</h1>
+	<br />
+	<hr />
+	<h:form>
+		<table align="center">
+			<tr>
+				<td>Email :</td>
+				<td><p:inputText value="#{login.email}" required="true" requiredMessage="You cannot left empty!" id="email"/></td>
+				<td><p:message for="email"/> </td>
+			</tr>
+			<tr>
+				<td>Password :</td>
+				<td><p:password value="#{login.password}" required="true" requiredMessage="You cannot left empty!" id="passw" /></td>
+				<td><p:message for="passw"/> </td>
+			</tr>
+			<tr>
+				<td><p:commandButton action="#{login.checkUser()}" value="Login"  ajax="false"/></td>
+				<td><p:button value="Cancel" href="index.xhtml" /></td>
+			</tr>
+		</table>
+		<p:messages showDetail="true" autoUpdate="true" />
+	</h:form>
+	<br />
+	<hr />
+</body>
+</html>

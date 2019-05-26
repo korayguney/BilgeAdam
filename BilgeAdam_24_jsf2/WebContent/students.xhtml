@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	
+	<h:form>
+	<table>
+		<tr>
+			<td>First Name :</td>
+			<td><h:inputText value="#{studentBean.student.firstname}" required="true" requiredMessage="Please fill firstname" id="fnmsg"/> </td>
+		</tr>
+		<tr>
+			<td>Last Name:</td>
+			<td><h:inputText value="#{studentBean.student.lastname}" required="true" requiredMessage="Please fill lastname" id="lnmsg"/> </td>
+		</tr>
+	</table>
+	<h:commandButton action="#{studentBean.saveStudent()}" value="Save" />
+	</h:form>
+	
+	<h:outputText value="Saved student info : #{studentBean.student}" />
+
+	<br /><br />
+	
+	<h:dataTable value="#{studentBean.studentList}" var="stu" border="1">
+		<h:column>#{stu.id}</h:column>
+		<h:column>#{stu.firstname}</h:column>
+		<h:column>#{stu.lastname}</h:column>
+	</h:dataTable>
+
+
+</body> 
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+	<div align="center">
+		<h1>
+			<p:outputLabel value="Role : #{sessionScopeBean.user.role}">
+			</p:outputLabel>
+		</h1>
+
+		<h:form rendered="#{sessionScopeBean.user.role == 'ADMIN'}">
+			<h1>ADMIN PAGE</h1>
+			<h2>Welcome #{sessionScopeBean.user.firstname}</h2>
+			<br></br>
+			<hr></hr>
+			<br></br>
+
+			<p:button href="userlist.xhtml" value="Manage Users" />
+			<br /><br />
+			<p:button href="courselist.xhtml" value="Manage Courses" />
+			<br /><br />
+			<p:button href="index.xhtml" value="Log out" />
+
+			<br></br>
+			<hr></hr>
+			<br></br>
+
+
+		</h:form>
+
+		<h:form rendered="#{sessionScopeBean.user.role == 'STUDENT'}">
+			<h1>STUDENT PAGE</h1>
+			<h2>Welcome #{sessionScopeBean.user.firstname}</h2>
+		</h:form>
+
+	</div>
+
+</body>
+</html>
