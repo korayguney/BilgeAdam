@@ -24,7 +24,7 @@
 			<br /><br />
 			<p:button href="courselist.xhtml" value="Manage Courses" />
 			<br /><br />
-			<p:button href="index.xhtml" value="Log out" />
+			<p:commandButton value="LOGOUT" action="#{login.logout}"></p:commandButton>
 
 			<br></br>
 			<hr></hr>
@@ -36,6 +36,20 @@
 		<h:form rendered="#{sessionScopeBean.user.role == 'STUDENT'}">
 			<h1>STUDENT PAGE</h1>
 			<h2>Welcome #{sessionScopeBean.user.firstname}</h2>
+			
+			<br></br>
+			<hr></hr>
+			<br></br>
+
+			<p:commandButton value="Show My Courses" action="#{courseListBean.allUserCourses()}"></p:commandButton>
+			<br /><br />
+			<p:commandButton value="LOGOUT" action="#{login.logout}"></p:commandButton>
+
+			<br></br>
+			<hr></hr>
+			<br></br>
+			
+			
 		</h:form>
 
 	</div>

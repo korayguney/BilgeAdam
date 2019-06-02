@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+
+	<h1>Book List</h1>
+
+	<br />
+	<hr />
+	<br />
+	<h:form>
+		<h:dataTable value="#{bookBean.books}" var="book" border="1">
+			<h:column>
+				<f:facet name="header">ISBN</f:facet>
+				#{book.ISBN}
+			</h:column>
+			<h:column>
+				<f:facet name="header">NAME</f:facet>
+				#{book.name}
+			</h:column>
+			<h:column>
+				<f:facet name="header">AUTHOR</f:facet>
+				#{book.author}
+			</h:column>
+			<h:column>
+				<f:facet name="header">PRICE</f:facet>
+				#{book.price}
+			</h:column>
+		</h:dataTable>
+		
+		<br/>
+		<h:outputText value="TOTAL OF THE PRICE : #{bookBean.getTotal()}" />
+	</h:form>
+</body>
+</html>

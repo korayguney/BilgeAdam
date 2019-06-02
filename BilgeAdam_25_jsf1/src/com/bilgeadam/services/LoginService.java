@@ -6,8 +6,8 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.validation.constraints.Null;
 
+import com.bilgeadam.models.Course;
 import com.bilgeadam.models.User;
 import com.bilgeadam.models.User.Role;
 import com.bilgeadam.utils.HashAlgorithm;
@@ -20,6 +20,7 @@ public class LoginService {
 	EntityManager entityManager;
 	
 	User user, user2;
+	Course course1,course2,course3;
 
 	public boolean checkUserOnDb(String email, String password) {
 		
@@ -62,6 +63,28 @@ public class LoginService {
 			entityManager.persist(user2);
 		}
 		
+		List<Course> courses = entityManager.createQuery("select c from Course c").getResultList();
+		
+		if(courses.size() == 0) {
+			
+			course1 = new Course();
+			course2 = new Course();
+			course3 = new Course();
+			
+			course1.setCourseCode("IT535");
+			course1.setCourseName("Introduction to Java Programming");
+			
+			course2.setCourseCode("OS245");
+			course2.setCourseName("Operating Systems");
+			
+			course3.setCourseCode("MI155");
+			course3.setCourseName("Agile Metodology");
+			
+			entityManager.persist(course1);
+			entityManager.persist(course2);
+			entityManager.persist(course3);
+			
+		}
 		
 	}
 	
