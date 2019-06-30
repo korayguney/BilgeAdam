@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BilgeAdam_28_P1</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="button">login</string>
+    <string name="help">Help</string>
+</resources>

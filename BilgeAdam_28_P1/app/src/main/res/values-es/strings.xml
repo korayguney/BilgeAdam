@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BilgeAdam_28_P1</string>
+    <string name="username">nombre de usuario</string>
+    <string name="password">contraseña</string>
+    <string name="button">iniciar sesión</string>
+    <string name="help">Ayuda</string>
+</resources>
